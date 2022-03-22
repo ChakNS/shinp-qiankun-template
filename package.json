@@ -7,9 +7,11 @@
     "new": "node ./bin/new.js",
     "install": "npm-run-all --serial install:*",
     "serve": "npm-run-all --parallel serve:*",
+    "build": "npm-run-all --serial build:*",
     "update:common": "npm-run-all --parallel update:common:*",
     "install:main": "cd main && yarn install",
-    "serve:main": "cd main && yarn serve"
+    "serve:main": "cd main && yarn serve",
+    "build:main": "cd main && yarn build"
   },
   "devDependencies": {
     "babel-eslint": "10.1.0",

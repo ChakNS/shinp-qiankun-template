@@ -117,6 +117,7 @@ function updateScripts(appName) {
   Object.assign(pkg.scripts, {
     [`install:${appName}`]: `cd apps/${appName} && yarn install`,
     [`serve:${appName}`]: `cd apps/${appName} && yarn serve`,
+    [`build:${appName}`]: `cd apps/${appName} && yarn build`,
     [`update:common:${appName}`]: `cd apps/${appName} && yarn remove common && yarn add ../../common`
   })
   writeFileSync(pkgPath, JSON.stringify(pkg, null, '  ') + '\n')
