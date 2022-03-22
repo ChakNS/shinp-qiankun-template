@@ -1,0 +1,22 @@
+{
+  "name": "shinp-qiankun-template",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "new": "node ./bin/new.js",
+    "install": "npm-run-all --serial install:*",
+    "serve": "npm-run-all --parallel serve:*",
+    "update:common": "npm-run-all --parallel update:common:*",
+    "install:main": "cd main && yarn install",
+    "serve:main": "cd main && yarn serve"
+  },
+  "devDependencies": {
+    "babel-eslint": "10.1.0",
+    "eslint": "6.7.2",
+    "enquirer": "^2.3.6",
+    "fs-extra": "^10.0.1",
+    "npm-run-all": "^4.1.5",
+    "uppercamelcase": "^3.0.0"
+  }
+}
