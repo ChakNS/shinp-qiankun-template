@@ -91,7 +91,7 @@ function copyTemp(appName, port) {
 
   // 修改应用名
   const pkg = require(pkgPath)
-  pkg.name = appName
+  pkg.name = appName.toLowerCase()
   writeFileSync(pkgPath, JSON.stringify(pkg, null, '  ') + '\n')
 }
 
@@ -100,7 +100,7 @@ function updateMain(appName, alias, port) {
   const appConfPath = path.join(__dirname, `../main/apps/appsConf/${appName}.js`)
 
   let mainEnv = readFileSync(envPath, 'utf-8')
-  mainEnv += `# ${alias}\nVUE_APP_${appName.toUpperCase()}=http://localhost:${port}\n`
+  mainEnv += `\n# ${alias}\nVUE_APP_${appName.toUpperCase()}=http://localhost:${port}\n`
   writeFileSync(envPath, mainEnv)
   const appConf = `// ${alias}
 module.exports = {
